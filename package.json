@@ -1,13 +1,13 @@
 {
   "name": "@jegdev/sema-ui",
-  "version": "0.0.2", 
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "files": [
     "dist"
   ],
   "main": "./dist/sema-ui.umd.js",
   "module": "./dist/sema-ui.es.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/sema-ui.es.js",
@@ -16,6 +16,13 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lit": "^3.0.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
   }
 }
