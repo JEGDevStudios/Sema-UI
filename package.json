@@ -3,12 +3,20 @@
   "private": false,
   "version": "0.0.1",
   "description": "Una colección de componentes Lit minimalistas estilo Swiss Design",
+  "keywords": ["Next", "React", "Angular", "Vue", "Astro", "Lit"],
   "type": "module",
   "files": [
     "dist"
   ],
+  "license": "MIT",
+  "author": "JEG Dev Studios",
+  "contributors": ["JhonnDevJS", "JasubiPL"],
   "main": "./dist/sema-ui.umd.js",
   "module": "./dist/sema-ui.es.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JEGDevStudios/Sema-UI"
+  },
   "exports": {
     ".": {
       "import": "./dist/sema-ui.es.js",
