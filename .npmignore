@@ -1,5 +1,25 @@
-node_modules
-.github
+# --- .npmignore ---
+
+# Ignorar sistema de control de versiones y configuración de editor
 .git
-src
+.github
+.vscode
+.idea
+.DS_Store
+
+# Ignorar dependencias de desarrollo (npm install las bajará solas si hacen falta)
+node_modules
+
+# Ignorar archivos de configuración de compilación (no necesarios para el usuario final)
 vite.config.js
+jsconfig.json
+.eslintrc.cjs
+.gitignore
+.npmrc
+
+# Ignorar el código fuente crudo (Opcional: Si quieres que tu paquete sea ligero)
+src
+index.html
+
+# NOTA: NO escribas 'dist' aquí. 
+# Al omitirlo, npm sabrá que debe subirlo.
