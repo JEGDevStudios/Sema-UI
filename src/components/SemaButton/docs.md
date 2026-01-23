@@ -148,17 +148,19 @@ Para aplicar tus propios colores, añade el atributo `custom` (booleano) y defin
 
 ## API Reference
 
-| Propiedad        | Tipo      | Default     | Descripción                                                         |
-| :--------------- | :-------- | :---------- | :------------------------------------------------------------------ |
-| `textLabel`      | `String`  | `undefined` | **Requerido.** El texto que se mostrará dentro del botón.           |
-| `kind`           | `String`  | `""`        | Si es `"link"`, renderiza un `<a>`. De lo contrario, un `<button>`. |
-| `url`            | `String`  | `undefined` | URL de destino. Solo funciona si `kind="link"`.                     |
-| `target`         | `String`  | `_self`     | Define dónde abrir el enlace (ej. `_blank`). Solo si `kind="link"`. |
-| `size`           | `String`  | `"md"`      | Ancho del botón: `sm`, `md`, `lg`, `full`.                          |
-| `fontSize`       | `String`  | `"md"`      | Tamaño del texto: `sm`, `md`, `lg`, `xl`.                           |
-| `custom`         | `Boolean` | `false`     | Activa el modo de colores personalizados.                           |
-| `firstColor`     | `String`  | `""`        | Color de fondo (Background) en modo personalizado.                  |
-| `secondaryColor` | `String`  | `""`        | Color de texto en modo personalizado.                               |
+| Propiedad        | Tipo      | Default     | Descripción                                                             |
+| :--------------- | :-------- | :---------- | :---------------------------------------------------------------------- |
+| `mode`           | `String`  | `primary`   | Puedes alternar entre `outline` y `ghost`               |
+| `textLabel`      | `String`  | `undefined` | **Requerido.** El texto que se mostrará dentro del botón.               |
+| `kind`           | `String`  | `""`        | Si es `"link"`, renderiza un `<a>`. De lo contrario, un `<button>`.     |
+| `url`            | `String`  | `undefined` | URL de destino. Solo funciona si `kind="link"`.                         |
+| `target`         | `String`  | `_self`     | Define dónde abrir el enlace (ej. `_blank`). Solo si `kind="link"`.     |
+| `altText`        | `String`  | `""`        | Define los texts de los atributos `alt` y `title` de un enlace o botón. |
+| `size`           | `String`  | `"md"`      | Ancho del botón: `sm`, `md`, `lg`, `full`.                              |
+| `fontSize`       | `String`  | `"md"`      | Tamaño del texto: `sm`, `md`, `lg`, `xl`.                               |
+| `custom`         | `String`  | `off`       | Activa el modo de colores personalizados con `on`.                      |
+| `firstColor`     | `String`  | `""`        | Color de fondo (Background) en modo personalizado.                      |
+| `secondaryColor` | `String`  | `""`        | Color de texto en modo personalizado.                                   |
 
 ## Accesibilidad
 
