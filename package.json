@@ -1,7 +1,7 @@
 {
   "name": "@jegdev/sema-ui",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Una colección de componentes Lit minimalistas estilo Swiss Design",
   "keywords": ["Next", "React", "Angular", "Vue", "Astro", "Lit"],
   "type": "module",
