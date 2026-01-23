@@ -22,17 +22,17 @@ export class SemaButton extends LitElement {
 			font-size: var(--btn-font-size);
 			border: 1px solid transparent;
 			width: var(--btn-width);
-      font-family:
-			"Inter",
-			system-ui,
-			-apple-system,
-			sans-serif;
+			font-family:
+				"Inter",
+				system-ui,
+				-apple-system,
+				sans-serif;
 		}
 
-    .btn:hover {
+		.btn:hover {
 			background: #f9fafb;
 			color: #ef4444;
-    }
+		}
 
 		.btn-primary {
 			background: #ef4444;
@@ -43,7 +43,7 @@ export class SemaButton extends LitElement {
 			background: var(--btn-bg-color);
 			color: var(--btn-text-color);
 		}
-    .btn-custom:hover {
+		.btn-custom:hover {
 			background: var(--btn-text-color);
 			color: var(--btn-bg-color);
 		}
@@ -51,13 +51,14 @@ export class SemaButton extends LitElement {
 
 	static properties = {
 		kind: { type: String },
-		custom: { type: String },
+		custom: { type: Boolean },
 		firstColor: { type: String },
 		secondaryColor: { type: String },
 		size: { type: String },
-    fontSize: {type: String},
+		fontSize: { type: String },
 		textLabel: { type: String },
-    url: {type: String},
+		url: { type: String },
+		target: { type: String },
 	};
 
 	constructor() {
@@ -67,13 +68,14 @@ export class SemaButton extends LitElement {
 		this.firstColor = "";
 		this.secondaryColor = "";
 		this.size = "";
-    this.fontSize = "";
+		this.fontSize = "";
 		this.textLabel;
 		this.url;
+		this.target = "_self";
 	}
 
 	render() {
-		const isCutomColor = this.custom
+		const isCustomColor = this.custom
 			? `--btn-bg-color: ${this.firstColor}; --btn-text-color: ${this.secondaryColor};`
 			: "";
 
@@ -83,32 +85,31 @@ export class SemaButton extends LitElement {
 		else if (this.size === "lg") sizeValue = "160px";
 		else if (this.size === "full") sizeValue = "100%";
 
-		const isCutomSize = `--btn-width: ${sizeValue};`;
+		const isCustomSize = `--btn-width: ${sizeValue};`;
 
-    let fontValue = "1rem";
+		let fontValue = "1rem";
 		if (this.fontSize === "sm") fontValue = "0.8rem";
 		else if (this.fontSize === "md") fontValue = "1rem";
 		else if (this.fontSize === "lg") fontValue = "1.5rem";
 		else if (this.fontSize === "xl") fontValue = "2rem";
 
-    const isCustomFonSize = `--btn-font-size: ${fontValue}`
+		const isCustomFontSize = `--btn-font-size: ${fontValue}`;
 
 		return this.kind === "link"
 			? html`
 					<a
-						style="${isCutomColor}${isCutomSize}${isCustomFonSize}"
+						style="${isCustomColor}${isCustomSize}${isCustomFontSize}"
 						href="${this.url}"
-						alt=""
 						title="${this.textLabel}"
-						target=""
-						class="btn ${this.custom === "true" ? "btn-custom" : "btn-primary"}"
+						target="${this.target}"
+						class="btn ${this.custom ? "btn-custom" : "btn-primary"}"
 						>${this.textLabel}
 					</a>
 				`
 			: html`
 					<button
-						style="${isCutomColor}${isCutomSize}${isCustomFonSize}"
-						class="btn ${this.custom === "true" ? "btn-custom" : "btn-primary"}"
+						style="${isCustomColor}${isCustomSize}${isCustomFontSize}"
+						class="btn ${this.custom ? "btn-custom" : "btn-primary"}"
 						title="${this.textLabel}"
 					>
 						${this.textLabel}
