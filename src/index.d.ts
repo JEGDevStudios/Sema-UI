@@ -13,9 +13,19 @@ export class SemaButton extends LitElement {
   altText: string;
 }
 
+export class SemaAlerts extends LitElement {
+  type: '' | 'info' | 'warn' | 'error' | string;
+  title: string;
+  message: string;
+}
+
 declare global {
   interface HTMLElementTagNameMap {
     "sema-button": SemaButton;
+  }
+  
+  interface HTMLElementTagNameMap {
+    "sema-alerts": SemaAlerts;
   }
 
   namespace JSX {
@@ -24,12 +34,15 @@ declare global {
         mode?: 'outline' | 'ghost' | '' | string;
         kind?: 'link' | 'button' | string;
         custom?: 'on' | 'off' | string;
+        
+        // Colores
         firstColor?: string;
         "first-color"?: string;
         
         secondaryColor?: string;
         "secondary-color"?: string;
         
+        // Tamaños
         size?: 'sm' | 'md' | 'lg' | 'full' | string;
         
         fontSize?: 'sm' | 'md' | 'lg' | 'xl' | string;
@@ -40,9 +53,22 @@ declare global {
         
         altText?: string;
         "alt-text"?: string;
+
         children?: any;
-        [key: string]: any; 
+        className?: string;       
+        style?: any;              
+        key?: any;                
+        ref?: any;                
+        onClick?: (e: any) => void; 
+        [key: string]: any;
       };
+
+      "sema-alerts": {
+        type?: '' | 'info' | 'warn' | 'error' | string;
+        title?: string;
+        message?: string;
+        [key: string]: any;
+      }
     }
   }
 }
