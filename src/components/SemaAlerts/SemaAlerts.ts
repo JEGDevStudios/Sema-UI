@@ -7,7 +7,7 @@ export class SemaAlerts extends LitElement {
 
 	static styles = [SemaAlertsStyles];
 
-	 @property({ type: String })	type: 'info' | 'warn' | 'error' | string = 'warn';
+	 @property({ type: String })	type: 'info' | 'warn' | 'error' | string = 'info';
 	 @property({ type: String })	title: string = '';
 	 @property({ type: String })	message: string = '';
 
