@@ -1,39 +1,27 @@
-import { LitElement, html, css } from "lit";
-import { SemaButtonStyles } from "./sema-button.css.js";
+import { LitElement, html } from "lit";
+import { customElement, property } from 'lit/decorators.js';
+import { SemaButtonStyles } from "./sema-button.css";
 
+@customElement('sema-button')
 export class SemaButton extends LitElement {
-	static get is() {
-		return "sema-button";
-	}
 
 	static styles = [SemaButtonStyles];
 
-	static properties = {
-		mode: { type: String },
-		kind: { type: String },
-		custom: { type: String },
-		firstColor: { type: String },
-		secondaryColor: { type: String },
-		size: { type: String },
-		fontSize: { type: String },
-		url: { type: String },
-		target: { type: String },
-		altText: { type: String },
-	};
+// 2. Definimos propiedades con Tipos Reales
+  @property({ type: String }) mode: 'outline' | 'ghost' | '' = '';
+  @property({ type: String }) kind: 'link' | 'button' = 'button';
+  @property({ type: String }) custom: 'on' | 'off' = 'off';
+  
+  // Colores (pueden ser undefined si no se pasan)
+  @property({ type: String }) firstColor?: string;
+  @property({ type: String }) secondaryColor?: string;
 
-	constructor() {
-		super();
-		this.mode = "";
-		this.kind = "";
-		this.custom = "off";
-		this.firstColor = "";
-		this.secondaryColor = "";
-		this.size = "";
-		this.fontSize = "";
-		this.url;
-		this.altText;
-		this.target;
-	}
+  @property({ type: String }) size: 'sm' | 'md' | 'lg' | 'full' = 'md';
+  @property({ type: String }) fontSize: 'sm' | 'md' | 'lg' | 'xl' = 'md';
+
+  @property({ type: String }) url: string = '';
+  @property({ type: String }) target: '_blank' | '_self' = '_self';
+  @property({ type: String }) altText: string = '';
 
 	render() {
 		const isCustom = this.custom === "on";
@@ -137,5 +125,45 @@ export class SemaButton extends LitElement {
 							</button>
 						`;
 	}
+
 }
-customElements.define(SemaButton.is, SemaButton);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'sema-button': SemaButton;
+  }
+
+  namespace JSX {
+    interface IntrinsicElements {
+      'sema-button': {
+        // Props específicas
+        mode?: 'outline' | 'ghost' | '' | string;
+        kind?: 'link' | 'button' | string;
+        custom?: 'on' | 'off' | string;
+        
+        // Lit convierte camelCase a kebab-case automáticamente, 
+        // pero aquí definimos lo que React puede usar.
+        firstColor?: string;
+        'first-color'?: string;
+        
+        secondaryColor?: string;
+        'secondary-color'?: string;
+        
+        size?: 'sm' | 'md' | 'lg' | 'full' | string;
+        fontSize?: 'sm' | 'md' | 'lg' | 'xl' | string;
+        
+        url?: string;
+        target?: string;
+        altText?: string;
+
+        // Estándar React
+        children?: any;
+        className?: string;
+        style?: any;
+        ref?: any;
+        onClick?: (e: any) => void;
+        [key: string]: any;
+      };
+    }
+  }
+}
