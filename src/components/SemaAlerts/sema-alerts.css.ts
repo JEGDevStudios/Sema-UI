@@ -62,11 +62,13 @@ export const SemaAlertsStyles = css`
 
 	.__info {
 		border-left: 4px solid #3ffc38;
+		border: 1px solid #3ffc38;
+		border-left-width: 4px;
 		background: #f1f1f1;
 		-webkit-backdrop-filter: blur(4px);
 		backdrop-filter: blur(4px);
 
-		.__title h3 {
+		.__title {
 			color: #0a0a0a;
 		}
 		.__paragraph {
