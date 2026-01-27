@@ -23,6 +23,7 @@ export const stylesSemaFaqs = css`
 
     article {
       max-width: 980px;
+      width: 100%;
     }
     .__title{ 
       color: #fff;

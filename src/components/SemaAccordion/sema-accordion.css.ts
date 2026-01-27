@@ -12,6 +12,7 @@ export const SemaAccordionStyles = css`
     margin-bottom: 0.5rem;
     background: var(--isOpenBackground);
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
   .__btn {
