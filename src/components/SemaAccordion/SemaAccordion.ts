@@ -59,3 +59,21 @@ export class SemaAccordion extends LitElement {
     this.open === false ? this.open = true : this.open = false;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "sema-accordion": SemaAccordion;
+  }
+
+  namespace JSX {
+    interface IntrinsicElements {
+      "sema-accordion": {
+        question?: string;
+        answer?: string;
+        color?: string;
+        open: true | false | Boolean;
+        [key: string]: any; 
+      }
+    }
+  }
+}
