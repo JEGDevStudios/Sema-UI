@@ -25,6 +25,7 @@ export const SemaAccordionStyles = css`
     backdrop-filter: blur(5px);
     transition: background 0.2s ease, color 0.2s ease;
     max-height: 200px; 
+    gap: 1rem;
   }
 
   .__title {
