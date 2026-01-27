@@ -20,6 +20,7 @@ jsconfig.json
 # Ignorar el código fuente crudo (Opcional: Si quieres que tu paquete sea ligero)
 src
 index.html
+styles.css
 
 # NOTA: NO escribas 'dist' aquí. 
 # Al omitirlo, npm sabrá que debe subirlo.

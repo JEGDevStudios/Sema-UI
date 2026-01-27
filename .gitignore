@@ -28,3 +28,4 @@ dist-ssr
 .npmrc
 
 index.html
+styles.css
