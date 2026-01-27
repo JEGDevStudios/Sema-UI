@@ -9,52 +9,36 @@ export class SemaAccordion extends LitElement {
 
   @property({type: String}) question: string = '';
   @property({type: String}) answer: string = '';
-  @property({type: String}) custom: 'on' | string = '';
-  @property({type: String}) firstColor: string = '';
-  @property({type: String}) secondaryColor: string = '';
+  @property({type: String}) color: string = '';
   @property({type: Boolean}) open: true | Boolean = false;
 
   render() {
-    const isCustom = this.custom === "on";
     const isOpen = this.open === true;
 
     // Definir colores base
-    const color1 = isCustom && this.firstColor ? this.firstColor : '#dc2626';
-    const color2 = isCustom ? (this.secondaryColor || '#000') : '#fff';
+    let svgColor =  this.color ? this.color : '#dc2626';
+    let btnColor = isOpen ? 'rgba(229, 231, 235, 0.2)' : '';
 
-    // Lógica de colores según el estado y modo
-    let svgColor;
-    let titleColor;
-
-    if (isCustom) {
-      // Modo Custom
-      svgColor = isOpen ? color2 : color1;
-      titleColor = isOpen ? color2 : color1;
-    } else {
-      // Modo Default
-      svgColor = isOpen ? '#fff' : color1;
-      titleColor = isOpen ? color2 : '#000';
-    }
-
-    const styles = isOpen ? `
-    --color-btn: ${color1};
-    --color-title: ${titleColor};
-    --color-svg: ${svgColor};
+    const stylesBtn = isOpen ? `
+    --color-btn: ${btnColor};
     --isOpenPadding: 1rem;
     --isOpenHeight: 200px;
     --isOpenOpacity: 1;
     --isOpenBorderTop: 1px solid #e5e7eb;
     --isOpenRotate: rotate(180deg);`
     :`
-    --color-btn: transparent; 
-    --color-title: ${titleColor};
-    --color-svg: ${svgColor};
+    --color-btn: transparent;
     --isOpenPadding: 0; 
     --isOpenHeight: 0; 
     --isOpenOpacity: 0; 
     --isOpenBorderTop: none;
     --isOpenRotate: rotate(0);`;
+
+    const stylesSvg = `
+    --svgcolor: ${svgColor};`
     
+    const styles = stylesBtn + stylesSvg
+
     return html`
     <article class="accordion" style="${styles}" >
       <div class="__btn" @click="${this._changeIsOpen}">

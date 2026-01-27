@@ -22,13 +22,14 @@ export const SemaAccordionStyles = css`
     align-items: center;
     font-weight: 600;
     background: var(--color-btn);
+    backdrop-filter: blur(5px);
     transition: background 0.2s ease, color 0.2s ease;
     max-height: 200px; 
   }
 
   .__title {
     margin: 0;
-    color: var(--color-title);
+    color: #000;
   }
   
   svg {
@@ -54,12 +55,12 @@ export const SemaAccordionStyles = css`
   }
 
 	@media (prefers-color-scheme: dark) {
-		h3 {
+		.__title {
       color: #fff;
     }
       
     svg {
-      fill: var(--firstCutomColor);
+      fill: var(--svgcolor);
     }
 
     .__text {
