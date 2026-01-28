@@ -13,7 +13,7 @@ interface DropdownCategory {
 }
 
 @customElement('sema-dropdown')
-export class SemaDropdowns extends LitElement {
+export class SemaDropdown extends LitElement {
 
   static styles = [SemaDropdownStyles]
 
@@ -75,5 +75,22 @@ export class SemaDropdowns extends LitElement {
 
   _changeIsOpen() {
     this.open = !this.open;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'sema-dropdown': SemaDropdown;
+  }
+
+  namespace JSX {
+    interface IntrinsicElements {
+      'sema-dropdpwn': {
+        label?: string;
+        color?: string;
+        bgColor?: string;
+        items?: any[];
+      }
+    }
   }
 }
