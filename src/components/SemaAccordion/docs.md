@@ -1,6 +1,6 @@
 # Sema Button (`<sema-accordion>`)
 
-El componente `<sema-accordion>` es un elemento de interfaz versátil que permite renderizar acordiones para el usuario ya sea dentro de una web o una PWA con estilos consistentes, y soporte para dark mode nativo y autonomo.
+El componente `<sema-accordion>` es un elemento de interfaz versátil que permite renderizar acordiones para el usuario ya sea dentro de una web o una PWA con estilos consistentes, y soporte para dark mode nativo y autónomo.
 
 ## Instalación
 
@@ -16,10 +16,7 @@ import "@jegdev/sema-ui";
 export default function App() {
 	return (
 		<div>
-			<sema-accordion
-        question="hola"
-        answer="adios"
-      ></sema-accordion>
+			<sema-accordion question="hola" answer="adios"></sema-accordion>
 		</div>
 	);
 }
@@ -98,11 +95,11 @@ Por defecto, el componente renderiza una pregunta de tipo string para el usuario
 Para que el componente de acordion cambie su color predeterminado define la propiedad `color=""`.
 
 ```html
-  <sema-accordion
-    color="blue"
-    question="pregunta"
-    answer="respuesta"
-  ></sema-accordion>
+<sema-accordion
+	color="blue"
+	question="pregunta"
+	answer="respuesta"
+></sema-accordion>
 ```
 
 La propiedad `color=""` puede recibir distintos formatos para colocar los colores, puedes usar los predetermiados como lo harias comunmente en css usando para palabras reservada "red", "blue", "green", etc. O puedes hacer uso de colores exadecimales como "#dc2626". "#fcfcfc", "#0c0c0c", etc. Tambien puedes hacer uso de rgb() de la misma forma.
@@ -112,39 +109,39 @@ La propiedad `color=""` puede recibir distintos formatos para colocar los colore
 - Con palabras reservadas
 
 ```html
-  <sema-accordion
-    color="blue"
-    question="pregunta"
-    answer="respuesta"
-  ></sema-accordion>
+<sema-accordion
+	color="blue"
+	question="pregunta"
+	answer="respuesta"
+></sema-accordion>
 ```
 
 - Con exadecimales
 
 ```html
-  <sema-accordion
-    color="#0077ff"
-    question="pregunta"
-    answer="respuesta"
-  ></sema-accordion>
+<sema-accordion
+	color="#0077ff"
+	question="pregunta"
+	answer="respuesta"
+></sema-accordion>
 ```
 
 - Con rgb()
 
 ```html
-  <sema-accordion
-    color="rgb(0, 85, 255)"
-    question="pregunta"
-    answer="respuesta"
-  ></sema-accordion>
+<sema-accordion
+	color="rgb(0, 85, 255)"
+	question="pregunta"
+	answer="respuesta"
+></sema-accordion>
 ```
 
 ---
 
 ## API Reference
 
-| Propiedad | Tipo     | Default | Descripción                                         |
-| :-------- | :------- | :------ | :-------------------------------------------------- |
-| `color`   | `String` |`#dc2626`| Puedes usar `blue`, `#0077ff` y `rgb(0, 85, 255)` |
-| `question`| `String` |   `""`  | Puedes pasarle aqui el titulo de la pregunta.       |
-| `answer`  | `String` |   `""`  | Pueder pasarle aqui la respuesta de la pregunta.    |
+| Propiedad  | Tipo     | Default   | Descripción                                       |
+| :--------- | :------- | :-------- | :------------------------------------------------ |
+| `color`    | `String` | `#dc2626` | Puedes usar `blue`, `#0077ff` y `rgb(0, 85, 255)` |
+| `question` | `String` | `""`      | Puedes pasarle aqui el titulo de la pregunta.     |
+| `answer`   | `String` | `""`      | Pueder pasarle aqui la respuesta de la pregunta.  |

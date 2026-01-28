@@ -1,6 +1,6 @@
 # Sema Button (`<sema-alerts>`)
 
-El componente `<sema-alerts>` es un elemento de interfaz versátil que permite renderizar menssages para el usuario ya sea dentro deuna web o una PWA con estilos consistentes, y soporte para dark mode ntivo y autonomo.
+El componente `<sema-alerts>` es un elemento de interfaz versátil que permite renderizar menssages para el usuario ya sea dentro deuna web o una PWA con estilos consistentes, y soporte para dark mode ntivo y autónomo.
 
 ## Instalación
 
@@ -68,9 +68,7 @@ import "@jegdev/sema-ui";
 ```
 
 ```html
-<sema-alerts 
-  title="Información" 
-  message="Este es un mensaje informativo.">
+<sema-alerts title="Información" message="Este es un mensaje informativo.">
 </sema-alerts>
 ```
 
@@ -87,9 +85,7 @@ import "@jegdev/sema-ui";
 Por defecto, el componente renderiza un mensaje de tipo informativo para el usuario (type="info") con los estilos en verde.
 
 ```html
-<sema-alerts 
-  title="Información" 
-  message="Este es un mensaje informativo.">
+<sema-alerts title="Información" message="Este es un mensaje informativo.">
 </sema-alerts>
 ```
 
@@ -98,10 +94,11 @@ Por defecto, el componente renderiza un mensaje de tipo informativo para el usua
 Para que el componente de mensaje infromativo funcione como uno de tipo alerta (type="warn"), define la propiedad `type="warn"`.
 
 ```html
-<sema-alerts 
-  type="warn"
-  title="Alerta" 
-  message="Este es un mensaje de advertencia.">
+<sema-alerts
+	type="warn"
+	title="Alerta"
+	message="Este es un mensaje de advertencia."
+>
 </sema-alerts>
 ```
 
@@ -110,10 +107,10 @@ Para que el componente de mensaje infromativo funcione como uno de tipo alerta (
 Para que el componente de mensaje funcione como uno de tipo error (type="error"), define la propiedad `type="error"`.
 
 ```html
-<sema-alerts 
-  type="error"
-  title="Error" 
-  message="Este es un mensaje de error"
+<sema-alerts
+	type="error"
+	title="Error"
+	message="Este es un mensaje de error"
 ></sema-alerts>
 ```
 
@@ -121,9 +118,8 @@ Para que el componente de mensaje funcione como uno de tipo error (type="error")
 
 ## API Reference
 
-| Propiedad        | Tipo     | Default     | Descripción                                                             |
-| :--------------- | :------- | :---------- | :---------------------------------------------------------------------- |
-| `type`           | `String` | `info`      | Puedes alternar entre `warn` y `error`                                  |
-| `title`          | `String` | `""`        | Puedes pasarle aqui el titulo del mensaje.                              |
-| `message`        | `String` | `""`        | Pueder pasarle aqui el texto (párrafo) del mensaje.                     |
-
+| Propiedad | Tipo     | Default | Descripción                                         |
+| :-------- | :------- | :------ | :-------------------------------------------------- |
+| `type`    | `String` | `info`  | Puedes alternar entre `warn` y `error`              |
+| `title`   | `String` | `""`    | Puedes pasarle aqui el titulo del mensaje.          |
+| `message` | `String` | `""`    | Pueder pasarle aqui el texto (párrafo) del mensaje. |
