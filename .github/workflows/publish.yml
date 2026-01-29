@@ -2,8 +2,8 @@ name: Publish to npm
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'  # Se activa solo con tags como v1.0.0, v0.0.9-beta.1, etc.
 
 jobs:
   build-and-publish:
@@ -17,7 +17,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          # ESTO es la clave: le decimos que prepare el login para npm
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
@@ -26,8 +25,19 @@ jobs:
       - name: Build
         run: npm run build
 
+      # PASO MÁGICO: Decide el canal de NPM según el nombre del tag
+      - name: Determine NPM Tag
+        id: dist_tag
+        run: |
+          if [[ "${{ github.ref_name }}" == *"beta"* ]]; then
+            echo "TAG=beta" >> $GITHUB_ENV
+          elif [[ "${{ github.ref_name }}" == *"alpha"* ]]; then
+            echo "TAG=next" >> $GITHUB_ENV
+          else
+            echo "TAG=latest" >> $GITHUB_ENV
+          fi
+
       - name: Publish to npm
-        # Usamos el token que acabamos de guardar
-        run: npm publish --access public
+        run: npm publish --tag $TAG --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

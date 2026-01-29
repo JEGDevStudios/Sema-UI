@@ -1,7 +1,7 @@
 {
   "name": "@jegdev/sema-ui",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.9-beta.1",
   "description": "Una colección de componentes Lit minimalistas estilo Swiss Design",
   "keywords": [
     "Next",
