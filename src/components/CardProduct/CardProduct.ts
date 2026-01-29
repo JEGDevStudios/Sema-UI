@@ -16,6 +16,9 @@ export class CardProduct extends LitElement {
   @property({type: Number})  price: number = 0;
 
 	render() {
+		const filledStars = Math.min(5, Math.max(0, Math.round(this.rate)));
+		const emptyStars = 5 - filledStars;
+
 		return html`
 			<article class="product-card" id="${this.id}">
 				<div class="card-image-container">
@@ -28,13 +31,13 @@ export class CardProduct extends LitElement {
 				<div class="card-details">
 					<div class="card-meta">
 						<span class="category">${this.category}</span>
-						<span class="product-id">ID: ${this.id}</span>
+						<span class="product-id">${this.id ? `ID: ${this.id}` : `` }</span>
 					</div>
 
 					<h3 class="product-title">${this.title}</h3>
 
 					<div class="rating-container">
-						<span class="stars">★★★★☆</span>
+						<span class="stars">${"★".repeat(filledStars)}${"☆".repeat(emptyStars)}</span>
 						<span class="average-rating">${this.rate}</span>
 						<span class="review-count">(${this.count} valoraciones)</span>
 					</div>
