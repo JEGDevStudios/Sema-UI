@@ -33,13 +33,13 @@ export const SemaButtonStyles = css`
 	/* ---------------- PRIMARY BUTTON STYLES  ------------------- */
 
 	.btn-primary {
-		background: #ef4444;
+		background: #da2b48;
 		color: #f9fafb;
 	}
 
 	.btn-primary:hover {
 		background: #f9fafb;
-		color: #ef4444;
+		color: #da2b48;
 	}
 
 	.btn-custom {
@@ -55,14 +55,14 @@ export const SemaButtonStyles = css`
 
 	.btn-outline {
 		background: #f9fafb;
-		color: #ef4444;
-		border: 1.5px solid #ef4444;
+		color: #da2b48;
+		border: 1.5px solid #da2b48;
 	}
 
 	.btn-outline:hover {
-		background: #ef4444;
+		background: #da2b48;
 		color: #f9fafb;
-		border: 1.5px solid #ef4444;
+		border: 1.5px solid #da2b48;
 	}
 
 	.btn-outline-custom {
@@ -84,7 +84,7 @@ export const SemaButtonStyles = css`
 	}
 
 	.btn-ghost:hover {
-		color: #ef4444;
+		color: #da2b48;
 	}
 
 	.btn-ghost-custom {
