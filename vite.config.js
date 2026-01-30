@@ -6,7 +6,7 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts',
       name: 'SemaUI',
-      fileName: (format) => `sema-ui.${format}.js`
+      fileName: (format) => `semaui.${format}.js`
     },
     rollupOptions: {
       external: /^lit/, 

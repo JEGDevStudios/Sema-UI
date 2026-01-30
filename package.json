@@ -1,7 +1,7 @@
 {
-  "name": "@jegdev/sema-ui",
+  "name": "@jegdev/semaui",
   "private": false,
-  "version": "0.0.9-beta.1",
+  "version": "0.0.1-beta.1",
   "description": "Una colección de componentes Lit minimalistas estilo Swiss Design",
   "keywords": [
     "Next",
@@ -27,8 +27,8 @@
   "contributors": [
     "JhonnDevJS"
   ],
-  "main": "./dist/sema-ui.umd.js",
-  "module": "./dist/sema-ui.es.js",
+  "main": "./dist/semaui.umd.js",
+  "module": "./dist/semaui.es.js",
   "types": "./dist/index.d.ts",
   "homepage": "https://github.com/JEGDevStudios/Sema-UI",
   "repository": {
@@ -38,8 +38,8 @@
   "exports": {
     ".": {
       "types": "./src/index.d.ts",
-      "import": "./dist/sema-ui.es.js",
-      "require": "./dist/sema-ui.umd.js"
+      "import": "./dist/semaui.es.js",
+      "require": "./dist/semaui.umd.js"
     }
   },
   "publishConfig": {
