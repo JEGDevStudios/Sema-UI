@@ -94,4 +94,77 @@ export const SemaButtonStyles = css`
 	.btn-ghost-custom:hover {
 		color: var(--btn-secondary-color);
 	}
+	:host([theme="dark"]) .btn-ghost {
+		color: #a1a1aa;
+	}
+	:host([theme="dark"]) .btn-ghost:hover {
+		color: #ffffff;
+	}
+
+	/* ---------------- MENU BUTTON STYLES  ------------------- */
+
+	.btn-menu {
+		background: transparent;
+		color: var(--text-main, #171212);
+		box-shadow: none;
+		border: none;
+		padding: 0.6rem;
+		aspect-ratio: 1/1;
+	}
+	.btn-menu:hover {
+		background: rgba(0,0,0,0.05);
+	}
+	:host([theme="dark"]) .btn-menu { color: #ffffff; }
+	:host([theme="dark"]) .btn-menu:hover { background: rgba(255,255,255,0.1); }
+
+	.btn-menu-custom {
+		background: transparent;
+		color: var(--btn-primary-color);
+		box-shadow: none;
+		border: none;
+		padding: 0.6rem;
+		aspect-ratio: 1/1;
+	}
+	.btn-menu-custom:hover {
+		background: var(--btn-secondary-color);
+		color: var(--btn-primary-color);
+	}
+
+	/* ---------------- NAV LINK STYLES  ------------------- */
+
+	.btn-nav-link, .btn-nav-link-custom {
+		background: transparent;
+		box-shadow: none;
+		border: none;
+		color: #9ca3af; /* Gray inactive */
+		text-decoration: underline;
+		width: auto;
+	}
+	.btn-nav-link:hover, .btn-nav-link:active, .btn-nav-link:focus {
+		color: var(--primary, #da2b48);
+		border: none;
+	}
+	.btn-nav-link-custom:hover, .btn-nav-link-custom:active, .btn-nav-link-custom:focus {
+		color: var(--btn-primary-color);
+		border: none;
+	}
+	:host([theme="dark"]) .btn-nav-link {
+		color: #d1d5db;
+	}
+	:host([theme="dark"]) .btn-nav-link:hover {
+		color: #ffffff;
+	}
+
+	/* ---------------- ROUNDED VARIANTS ------------------- */
+
+	.rounded-sm { border-radius: 4px; }
+	.rounded-md { border-radius: 8px; }
+	.rounded-lg { border-radius: 12px; }
+	.rounded-xl { border-radius: 16px; }
+	.rounded-full { border-radius: 9999px; }
+	.rounded-circle { 
+		border-radius: 50%; 
+		padding: 0.1rem; 
+		aspect-ratio: 1/1; 
+	}
 `;

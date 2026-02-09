@@ -1,7 +1,7 @@
 # Sema UI
 
-![NPM Version](https://img.shields.io/npm/v/@jegdev/sema-ui)
-![License](https://img.shields.io/npm/l/@jegdev/sema-ui)
+![NPM Version](https://img.shields.io/npm/v/@jegdev/semaui)
+![License](https://img.shields.io/npm/l/@jegdev/semaui)
 ![Built with Lit](https://img.shields.io/badge/built%20with-Lit-blue)
 
 [Español](#español) | [English](#english)
