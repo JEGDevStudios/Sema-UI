@@ -1,7 +1,7 @@
 {
   "name": "@jegdev/semaui",
   "private": false,
-  "version": "0.0.1-beta.7",
+  "version": "0.0.1-alpha.8",
   "description": "Una colección de componentes Lit minimalistas estilo Swiss Design",
   "keywords": [
     "Next",
