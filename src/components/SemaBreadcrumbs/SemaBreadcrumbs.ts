@@ -7,8 +7,32 @@ export class SemaBreadcrumbs extends LitElement {
 
   static styles = [BreadcrumbsStyles]
 
+  @property({ type: String, reflect: true }) theme: string = "light";
   @property({ type: Array }) items: any[] = [];
   @property({ type: String }) color: string = '';
+
+  constructor() {
+    super();
+    this.theme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    document.addEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  _handleThemeUpdate = () => {
+    this.theme = document.documentElement.getAttribute("data-theme") || "light";
+  };
 
   render() {
     const styles = this.color ? `--color-primary: ${this.color};` : `--color-primary: #da2b48;`;

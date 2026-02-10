@@ -7,6 +7,7 @@ export class SemaCardProduct extends LitElement {
 
 	static styles = [cardStyles];
 
+  @property({ type: String, reflect: true }) theme: string = "light";
   @property({type: String})  image: string = '';
   @property({type: String})  category: string = '';
   @property({type: String})  id: string = '';
@@ -14,6 +15,29 @@ export class SemaCardProduct extends LitElement {
   @property({type: Number})  rate: number = 0;
   @property({type: Number})  count: number = 0;
   @property({type: Number})  price: number = 0;
+
+  constructor() {
+    super();
+    this.theme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    document.addEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  _handleThemeUpdate = () => {
+    this.theme = document.documentElement.getAttribute("data-theme") || "light";
+  };
 
 	render() {
 		const filledStars = Math.min(5, Math.max(0, Math.round(this.rate)));

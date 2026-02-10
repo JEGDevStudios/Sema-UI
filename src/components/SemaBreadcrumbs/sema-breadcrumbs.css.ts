@@ -32,9 +32,8 @@ export const BreadcrumbsStyles = css`
     font-weight: 600;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .__link a {
-      color: #fff;
-    }
+  :host([theme="dark"]) .__link a {
+    color: #fff;
   }
+  
 `

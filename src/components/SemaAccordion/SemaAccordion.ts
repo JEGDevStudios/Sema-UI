@@ -7,13 +7,38 @@ export class SemaAccordion extends LitElement {
 
   static styles = [SemaAccordionStyles]
 
+  @property({ type: String, reflect: true }) theme: string = "light";
   @property({type: String}) question: string = '';
   @property({type: String}) answer: string = '';
   @property({type: String}) color: string = '';
-  @property({type: Boolean}) open: true | Boolean = false;
+  @property({type: Boolean}) open: boolean = false;
+
+  constructor() {
+    super();
+    this.theme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._handleThemeUpdate();
+    document.addEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  _handleThemeUpdate = () => {
+    this.theme = document.documentElement.getAttribute("data-theme") || "light";
+  };
 
   render() {
-    const isOpen = this.open === true;
+    const isOpen = this.open;
 
     // Definir colores base
     let svgColor =  this.color ? this.color : '#da2b48';
@@ -54,7 +79,7 @@ export class SemaAccordion extends LitElement {
   }
 
   _changeIsOpen() {
-    this.open === false ? this.open = true : this.open = false;
+    this.open = !this.open;
   }
 }
 
@@ -69,7 +94,7 @@ declare global {
         question?: string;
         answer?: string;
         color?: string;
-        open: true | false | Boolean;
+        open?: boolean;
         [key: string]: any; 
       }
     }

@@ -7,9 +7,33 @@ export class SemaAlerts extends LitElement {
 
 	static styles = [SemaAlertsStyles];
 
+  @property({ type: String, reflect: true }) theme: string = "light";
 	 @property({ type: String })	type: 'info' | 'warn' | 'error' | string = 'info';
 	 @property({ type: String })	title: string = '';
 	 @property({ type: String })	message: string = '';
+
+  constructor() {
+    super();
+    this.theme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    document.addEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  _handleThemeUpdate = () => {
+    this.theme = document.documentElement.getAttribute("data-theme") || "light";
+  };
 
 	render() {
 		return html`

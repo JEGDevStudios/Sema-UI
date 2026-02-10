@@ -131,35 +131,33 @@ export const cardStyles = css`
 		vertical-align: top;
 	}
 	
-	@media (prefers-color-scheme: dark) {
-		.product-card {
-			background-color: #1f2937;
-			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-		}
+	:host([theme="dark"]) .product-card {
+		background-color: #1f2937;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+	}
 
-		.product-title {
-			color: #f9fafb;
-		}
+	:host([theme="dark"]) .product-title {
+		color: #f9fafb;
+	}
 
-		.average-rating {
-			color: #f3f4f6;
-		}
+	:host([theme="dark"]) .average-rating {
+		color: #f3f4f6;
+	}
 
-		.review-count {
-			color: #9ca3af;
-		}
+	:host([theme="dark"]) .review-count {
+		color: #9ca3af;
+	}
 
-		.price {
-			color: #f9fafb;
-		}
+	:host([theme="dark"]) .price {
+		color: #f9fafb;
+	}
 
-		.category {
-			background-color: #3730a3;
-			color: #e0e7ff;
-		}
+	:host([theme="dark"]) .category {
+		background-color: #3730a3;
+		color: #e0e7ff;
+	}
 
-		hr {
-			border-top: 1px solid #374151;
-		}
+	:host([theme="dark"]) hr {
+		border-top: 1px solid #374151;
 	}
 `;

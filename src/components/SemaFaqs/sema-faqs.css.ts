@@ -26,9 +26,7 @@ export const stylesSemaFaqs = css`
     text-align: center;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .__title{ 
-      color: #fff;
-    }
+  :host([theme="dark"]) .__title{ 
+    color: #fff;
   }
 `

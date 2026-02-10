@@ -17,11 +17,39 @@ export class SemaDropdown extends LitElement {
 
   static styles = [SemaDropdownStyles]
 
+  @property({ type: String, reflect: true }) theme: string = "light";
   @property({ type: String }) label: string = '';
   @property({ type: String }) color: string = '';
   @property({ type: String }) bgColor: string = '';
   @property({ type: Boolean }) open: boolean = false;
   @property({ type: Array }) items: (DropdownItem | DropdownCategory)[] = [];
+
+  constructor() {
+    super();
+    this.theme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    document.addEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener("toggle-theme", this._handleThemeUpdate);
+  }
+
+  _handleThemeUpdate = () => {
+    this.theme = document.documentElement.getAttribute("data-theme") || "light";
+  };
+  
+  _changeIsOpen() {
+    this.open = !this.open;
+  }
 
   render() {
     const isOpen = this.open === true;
@@ -71,10 +99,6 @@ export class SemaDropdown extends LitElement {
         </div>
       </div>
     `
-  }
-
-  _changeIsOpen() {
-    this.open = !this.open;
   }
 }
 

@@ -76,29 +76,28 @@ export const SemaDropdownStyles = css`
     background-color: rgba(0, 0, 0, 0.05);
   }
 
-	@media (prefers-color-scheme: dark) {
-		.__label {
-      color: #fff;
-    }
-      
-    svg {
-      fill: var(--svgcolor);
-    }
+	:host([theme="dark"]) .__label {
+    color: #fff;
+  }
+    
+  :host([theme="dark"]) svg {
+    fill: var(--svgcolor);
+  }
 
-  .__content {
+  :host([theme="dark"]) .__content {
     background: #131313;
   }
-    .__link {
-      color: #dbdbdd;
-    }
 
-    .__link:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+  :host([theme="dark"]) .__link {
+    color: #dbdbdd;
+  }
 
-    .__category-title {
-      color: var(--svgcolor);
-    }
+  :host([theme="dark"]) .__link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 
-	}
+  :host([theme="dark"]) .__category-title {
+    color: var(--svgcolor);
+  }
+
 `

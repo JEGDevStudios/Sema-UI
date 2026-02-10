@@ -55,23 +55,19 @@ export const SemaAccordionStyles = css`
     margin: 0;
   }
 
-	@media (prefers-color-scheme: dark) {
-      
-    .__btn {
-      background: var(--svgcolor);
-    }
+	:host([theme="dark"]) .__btn {
+    background: var(--svgcolor);
+  }
 
-		.__title {
-      color: #fff;
-    }
-      
-    svg {
-      fill: #fff;
-    }
+  :host([theme="dark"]) .__title {
+    color: #fff;
+  }
+    
+  :host([theme="dark"]) svg {
+    fill: #fff;
+  }
 
-    .__text {
-      color: #dbdbdd;
-    }
-
-	}
+  :host([theme="dark"]) .__text {
+    color: #dbdbdd;
+  }
 `

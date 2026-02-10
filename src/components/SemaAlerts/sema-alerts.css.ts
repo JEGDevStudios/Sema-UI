@@ -76,16 +76,14 @@ export const SemaAlertsStyles = css`
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
-		.__info {
-			background: transparent;
-
-			.__title {
-				color: #e0e0e0;
-			}
-			.__paragraph {
-				color: #fff;
-			}
-		}
+	:host([theme="dark"]) .__info {
+		background: transparent;
 	}
+	:host([theme="dark"]) .__title {
+		color: #e0e0e0;
+	}
+	:host([theme="dark"]) .__paragraph {
+		color: #fff;
+	}
+
 `;
