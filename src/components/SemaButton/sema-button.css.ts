@@ -56,8 +56,9 @@ export const SemaButtonStyles = css`
 	/* ---------------- OUTLINE BUTTON STYLES  ------------------- */
 
 	.btn-outline {
-		color: #da2b48;
+		background: transparent;
 		border: 1.5px solid #da2b48;
+		color: #da2b48;
 	}
 
 	.btn-outline:hover {
@@ -67,6 +68,7 @@ export const SemaButtonStyles = css`
 	}
 
 	.btn-outline-custom {
+		background: transparent;
 		color: var(--btn-primary-color);
 		border: 1.5px solid var(--btn-primary-color, currentColor);
 	}
