@@ -30,7 +30,7 @@
   "main": "./dist/semaui.umd.js",
   "module": "./dist/semaui.es.js",
   "types": "./dist/index.d.ts",
-  "homepage": "https://github.com/JEGDevStudios/Sema-UI",
+  "homepage": "https://semaui.netlify.app/",
   "repository": {
     "type": "git",
     "url": "https://github.com/JEGDevStudios/Sema-UI"
